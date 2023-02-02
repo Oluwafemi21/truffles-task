@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
                 <nav>
                     <ul className="px-4">
                         {menuItems.map((link) => (
-                            <SidebarLink link={link} />
+                            <SidebarLink link={link} key={link.title} />
                         ))}
                     </ul>
                 </nav>
