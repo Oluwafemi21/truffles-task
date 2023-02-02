@@ -3,3 +3,25 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900');
+
+html,
+body {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #7445F8;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 24px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 4px;
+    background-color: #7445F8;
+    border-radius: 24px;
+}
