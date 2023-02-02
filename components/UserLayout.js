@@ -13,20 +13,6 @@ const UserLayout = ({ children }) => {
                         <Image src={Logo} alt="Truffles Logo" />
                     </Link>
                 </div>
-                <ul className="">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                </ul>
             </aside>
             <div className="flex flex-col flex-1">
                 <header className="h-[83px] px-6 sticky top-0 flex items-center justify-end border-b bg-white border-b-gray-300">
