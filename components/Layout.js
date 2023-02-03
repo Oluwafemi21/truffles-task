@@ -15,7 +15,7 @@ import {
     MdOutlineContacts,
 } from "react-icons/md";
 import { FaFileInvoice, FaUserCircle } from "react-icons/fa";
-import { HiBell } from "react-icons/hi";
+import { HiBell, HiMenu, HiOutlineX } from "react-icons/hi";
 import { ImMoveUp } from "react-icons/im";
 
 const menuItems = [
@@ -55,7 +55,17 @@ const Layout = ({ children }) => {
     const router = useRouter();
     return (
         <div className="min-h-screen flex bg-grey">
-            <aside className="h-screen w-60 sticky top-0">
+            <button
+                className="absolute p-1.5 right-4 top-6 z-30 bg-transparent rounded text-gray-400 hover:bg-gray-200 focus:ring-2 focus:ring-primary focus:outline-none peer md:hidden"
+                title="Open mobile menu button"
+                aria-hidden="true"
+            >
+                <HiMenu className="h-6 w-6" />
+            </button>
+            <aside className="h-screen group fixed md:sticky top-0 z-40 w-60 transition-[left] duration-300 ease-in-out xl:shadow-none xl:left-0 bg-grey -left-60 peer-focus-within:left-0 peer-focus-within:shadow-3xl">
+                <button className="absolute p-1 invisible -right-8 top-6 bg-transparent rounded-full text-white focus:ring-2 focus:ring-white focus:outline-none">
+                    <HiOutlineX className="h-6 w-6" />
+                </button>
                 <div className="grid place-content-center h-[83px] border-b border-b-gray-300 ">
                     <Link href="/">
                         <Image src={Logo} alt="Truffles Logo" priority />
@@ -76,7 +86,7 @@ const Layout = ({ children }) => {
                             ? "Dashboard"
                             : router.pathname.slice(1)}
                     </p>
-                    <div className="flex items-center gap-4">
+                    <div className="md:flex items-center gap-4 hidden">
                         <Link
                             href="/user"
                             className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-200 text-secondary"

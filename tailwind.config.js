@@ -21,6 +21,7 @@ module.exports = {
                 navy: "#252F40",
             },
             boxShadow: {
+                '3xl': '0 0 0 10000px rgba(0,0,0,0.75)',
                 button: "0px 1px 2px rgba(0, 0, 0, 0.05)",
                 default: "0px 20px 27px rgba(0, 0, 0, 0.05)",
                 card_icon:
