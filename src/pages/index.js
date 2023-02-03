@@ -1,8 +1,12 @@
 import Card from "components/Card";
 import Head from "next/head";
-import Calendar from "react-calendar";
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
+import Chart from "components/Chart";
+
+// Plugins without
+const Calendar = dynamic(() => import("react-calendar"), { ssr: false });
 
 const cardLayoutItems = [
     {
@@ -26,6 +30,71 @@ const cardLayoutItems = [
         icon: "/arrow-up.svg",
     },
 ];
+
+// Chart items
+const chartData = {
+    height: 350,
+    width: "100%",
+    type: "area",
+    series: [
+        {
+            name: "Assets",
+            data: [50, 10, 300, 200, 500, 270, 400, 230, 500],
+        },
+        {
+            name: "Liability",
+            data: [30, 100, 200, 40, 150, 100, 420, 80, 410],
+        },
+    ],
+    options: {
+        chart: {
+            height: 350,
+            type: "area",
+            toolbar: {
+                show: false,
+            },
+        },
+        dataLabels: {
+            enabled: false,
+        },
+        stroke: {
+            curve: "smooth",
+        },
+        xaxis: {
+            categories: [
+                "Apr",
+                "May",
+                "Jun",
+                "Jul",
+                "Aug",
+                "Sep",
+                "Oct",
+                "Nov",
+                "Dec",
+            ],
+        },
+        yaxis: {
+            categories: [0, 100, 200, 300, 400, 500],
+        },
+        colors: ["#82D616", "#FF8540"],
+        grid: {
+            xaxis: {
+                lines: {
+                    show: true,
+                },
+            },
+            yaxis: {
+                lines: {
+                    show: true,
+                },
+            },
+        },
+        fill: {
+            colors: ["#82D616", "#FF8540"],
+            opacity: 0.1,
+        },
+    },
+};
 
 export default function Home() {
     const [value, onChange] = useState(new Date());
@@ -88,19 +157,27 @@ export default function Home() {
                                 ))}
                             </ul>
                         </section>
+                        <div className="bg-white rounded-lg my-5 p-5 shadow-default">
+                            <p className="pl-3">Assets & Liabilities</p>
+                            <Chart chartData={chartData} />
+                        </div>
                     </div>
-                    <div className="grid place-content-center bg-white p-4 rounded-md">
+                    <div className="grid place-content-center bg-white p-4 rounded-md shadow-default">
                         <Calendar
                             onChange={onChange}
                             value={value}
                             prev2Label={null}
+                            next2Label={null}
+                            prevAriaLabel="Go to prev month"
+                            nextAriaLabel="Go to next month"
                             prevLabel={
                                 <MdChevronLeft className="h-6 w-6 mx-auto" />
                             }
                             nextLabel={
                                 <MdChevronRight className="h-6 w-6 mx-auto" />
                             }
-                            next2Label={null}
+                            next2AriaLabel={null}
+                            prev2AriaLabel={null}
                         />
                     </div>
                 </section>

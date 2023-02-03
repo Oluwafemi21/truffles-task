@@ -15,7 +15,7 @@ import {
     MdOutlineContacts,
 } from "react-icons/md";
 import { FaFileInvoice, FaUserCircle } from "react-icons/fa";
-import { HiBell, HiMenu, HiOutlineX } from "react-icons/hi";
+import { HiBell, HiMenu } from "react-icons/hi";
 import { ImMoveUp } from "react-icons/im";
 
 const menuItems = [
@@ -68,16 +68,39 @@ const Layout = ({ children }) => {
                         <Image src={Logo} alt="Truffles Logo" priority />
                     </Link>
                 </div>
-                <nav>
-                    <ul className="px-4">
+                <nav className="px-4">
+                    <ul>
                         {menuItems.map((link) => (
-                            <SidebarLink link={link} key={link.title} />
+                            <li className="m-2" key={link.title}>
+                                <SidebarLink
+                                    title={link.title}
+                                    href={link.href}
+                                    icon={link.icon}
+                                    key={link.title}
+                                />
+                            </li>
                         ))}
                     </ul>
+                    <div className="border-y border-gray-300 lg:hidden">
+                        <div className="m-2">
+                            <SidebarLink
+                                title={"Profile"}
+                                href={"/user"}
+                                icon={FaUserCircle}
+                            />
+                        </div>
+                        <div className="m-2">
+                            <SidebarLink
+                                title={"Notifications"}
+                                href={"/notifications"}
+                                icon={HiBell}
+                            />
+                        </div>
+                    </div>
                 </nav>
             </aside>
             <div className="flex flex-col flex-1">
-                <header className="h-[83px] px-6 sticky top-0 flex justify-between items-center border-b border-b-gray-300 bg-grey">
+                <header className="h-[83px] px-6 sticky z-20 top-0 flex justify-between items-center border-b border-b-gray-300 bg-grey">
                     <p className="font-semibold capitalize text-2xl">
                         {router.pathname === "/"
                             ? "Dashboard"
