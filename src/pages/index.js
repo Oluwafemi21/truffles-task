@@ -1,9 +1,8 @@
 import Card from "components/Card";
 import Head from "next/head";
-
-// import wallet from "public/wallet.svg";
-// import arrowUp from "public/arrow-up.svg";
-// import arrowDown from "public/arrow-down.svg";
+import Calendar from "react-calendar";
+import { useState } from "react";
+import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 
 const cardLayoutItems = [
     {
@@ -29,6 +28,7 @@ const cardLayoutItems = [
 ];
 
 export default function Home() {
+    const [value, onChange] = useState(new Date());
     return (
         <>
             <Head>
@@ -80,16 +80,29 @@ export default function Home() {
                     </svg>
                 </section>
                 <section className="mt-4 grid md:grid-cols-3 gap-4">
-                    <div className="col-span-2">
+                    <div className="md:col-span-2">
                         <section>
-                            <ul className="grid grid-cols-2 gap-4">
+                            <ul className="grid md:grid-cols-2 gap-4">
                                 {cardLayoutItems.map((card) => (
                                     <Card card={card} key={card.card_name} />
                                 ))}
                             </ul>
                         </section>
                     </div>
-                    <div className="calendar bg-red-600"> hi</div>
+                    <div className="grid place-content-center bg-white p-4 rounded-md">
+                        <Calendar
+                            onChange={onChange}
+                            value={value}
+                            prev2Label={null}
+                            prevLabel={
+                                <MdChevronLeft className="h-6 w-6 mx-auto" />
+                            }
+                            nextLabel={
+                                <MdChevronRight className="h-6 w-6 mx-auto" />
+                            }
+                            next2Label={null}
+                        />
+                    </div>
                 </section>
             </>
         </>

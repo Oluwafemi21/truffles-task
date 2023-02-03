@@ -8,7 +8,7 @@ const SidebarLink = (props) => {
         <li className="m-2" key={title}>
             <Link
                 href={href}
-                className={`group/link flex items-center gap-2 py-2 px-4 rounded-lg cursor-pointer text-navy hover:bg-primary  hover:shadow-default md:focus:shadow-default  ${
+                className={`group/link flex items-center gap-2 py-2 px-4 rounded-lg cursor-pointer text-navy hover:bg-primary  hover:shadow-default focus:shadow-default  ${
                     router.asPath === href && "bg-white "
                 }`}
             >

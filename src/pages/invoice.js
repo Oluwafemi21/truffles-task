@@ -15,7 +15,7 @@ const Invoice = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <section className="h-full grid place-content-center gap-10">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center flex-wrap justify-center text-center gap-3">
                     <p className="text-lg">
                         The
                         <span className="text-primary font-bold mx-2">

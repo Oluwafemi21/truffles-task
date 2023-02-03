@@ -56,16 +56,13 @@ const Layout = ({ children }) => {
     return (
         <div className="min-h-screen flex bg-grey">
             <button
-                className="absolute p-1.5 right-4 top-6 z-30 bg-transparent rounded text-gray-400 hover:bg-gray-200 focus:ring-2 focus:ring-primary focus:outline-none peer md:hidden"
+                className="fixed p-1.5 right-4 top-6 z-30 bg-transparent rounded text-gray-400 hover:bg-gray-200 focus:ring-2 focus:ring-primary focus:outline-none peer lg:hidden"
                 title="Open mobile menu button"
                 aria-hidden="true"
             >
                 <HiMenu className="h-6 w-6" />
             </button>
-            <aside className="h-screen group fixed md:sticky top-0 z-40 w-60 transition-[left] duration-300 ease-in-out xl:shadow-none xl:left-0 bg-grey -left-60 peer-focus-within:left-0 peer-focus-within:shadow-3xl">
-                <button className="absolute p-1 invisible -right-8 top-6 bg-transparent rounded-full text-white focus:ring-2 focus:ring-white focus:outline-none">
-                    <HiOutlineX className="h-6 w-6" />
-                </button>
+            <aside className="h-screen group fixed lg:sticky top-0 z-40 lg:w-[264px] w-72 transition-[left] duration-300 ease-in-out xl:shadow-none xl:left-0 bg-grey -left-72 peer-focus-within:left-0 peer-focus-within:shadow-3xl">
                 <div className="grid place-content-center h-[83px] border-b border-b-gray-300 ">
                     <Link href="/">
                         <Image src={Logo} alt="Truffles Logo" priority />
@@ -86,7 +83,7 @@ const Layout = ({ children }) => {
                             ? "Dashboard"
                             : router.pathname.slice(1)}
                     </p>
-                    <div className="md:flex items-center gap-4 hidden">
+                    <div className="lg:flex items-center gap-4 hidden">
                         <Link
                             href="/user"
                             className="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-200 text-secondary"
