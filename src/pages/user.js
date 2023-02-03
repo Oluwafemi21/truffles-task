@@ -17,7 +17,7 @@ export default function About() {
             </Head>
             <section className="min-h-screen container mx-auto lg:py-7 lg:px-14 py-5 px-3">
                 <User />
-                <Business />
+                {/* <Business /> */}
                 <div className="flex items-center justify-between sm:flex-row flex-col gap-4">
                     <button className="sm:w-28 w-full  text-center font-semibold px-6 py-2 rounded bg-transparent border border-black text-navy hover:bg-black hover:text-white cursor-pointer">
                         Back

@@ -62,9 +62,7 @@ const User = () => {
                         id="nationality"
                         className="rounded cursor-pointer"
                     >
-                        <option value="usa" selected>
-                            United States
-                        </option>
+                        <option value="usa">United States</option>
                         <option value="ngn">Nigeria</option>
                     </select>
                 </div>

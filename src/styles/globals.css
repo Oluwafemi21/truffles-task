@@ -30,6 +30,18 @@ body {
 .react-tel-input .form-control {
     width: 100% !important;
     height: auto !important;
+    border-color: black !important;
+}
+
+.react-tel-input .flag-dropdown {
+    border-color: black !important;
+}
+
+.react-tel-input .flag-dropdown:focus,
+.react-tel-input .form-control:focus {
+    border: none !important;
+    outline: 1px solid #7445F8 !important;
+    outline-offset: 1px;
 }
 
 .react-tel-input .selected-flag {
