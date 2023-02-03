@@ -26,12 +26,19 @@ body {
     border-radius: 24px;
 }
 
-/* Style for react */
+/* Style for react-phone-input */
+.react-tel-input .form-control {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.react-tel-input .selected-flag {
+    width: 41px !important;
+}
+
+/* Style for react-calendar */
 .react-calendar {
-    min-width: 350px;
-    padding-inline: 12px;
-    background: transparent;
-    line-height: 1.125em;
+    @apply w-full bg-transparent leading-4
 }
 
 .react-calendar--doubleView {
@@ -68,13 +75,12 @@ body {
 }
 
 .react-calendar__navigation {
-    display: flex;
-    height: 44px;
-    margin-bottom: 1em;
+    @apply flex h-11 mb-2 border-b border-gray-200 text-navy font-medium
 }
 
 .react-calendar__navigation>.react-calendar__navigation__label {
     order: 0;
+    text-align: left;
 }
 
 .react-calendar__navigation>.react-calendar__navigation__prev-button {
@@ -96,7 +102,7 @@ body {
 
 .react-calendar__navigation button:enabled:hover,
 .react-calendar__navigation button:enabled:focus {
-    background-color: #e6e6e6;
+    @apply bg-gray-50;
 }
 
 .react-calendar__month-view__weekdays {

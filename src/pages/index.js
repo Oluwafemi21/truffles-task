@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { useState } from "react";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 import Chart from "components/Chart";
+import Transactions from "components/Transactions";
 
 // Plugins without
 const Calendar = dynamic(() => import("react-calendar"), { ssr: false });
@@ -157,12 +158,12 @@ export default function Home() {
                                 ))}
                             </ul>
                         </section>
-                        <div className="bg-white rounded-lg my-5 p-5 shadow-default">
+                        <div className="bg-white rounded-lg mt-5 md:p-5 py-2 shadow-default">
                             <p className="pl-3">Assets & Liabilities</p>
                             <Chart chartData={chartData} />
                         </div>
                     </div>
-                    <div className="grid place-content-center bg-white p-4 rounded-md shadow-default">
+                    <aside className="flex flex-col gap-3 bg-white py-4 px-3 rounded-md shadow-default">
                         <Calendar
                             onChange={onChange}
                             value={value}
@@ -179,7 +180,8 @@ export default function Home() {
                             next2AriaLabel={null}
                             prev2AriaLabel={null}
                         />
-                    </div>
+                        <Transactions />
+                    </aside>
                 </section>
             </>
         </>

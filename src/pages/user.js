@@ -1,5 +1,7 @@
 import Head from "next/head";
 import UserLayout from "components/UserLayout";
+import User from "components/UserInformation";
+import Business from "components/BusinessInformation";
 
 export default function About() {
     return (
@@ -13,12 +15,18 @@ export default function About() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <h1 className="text-red-300">About</h1>
-            <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Possimus commodi quasi laboriosam facere molestias voluptatum
-                vero ex ducimus voluptas iusto?
-            </p>
+            <section className="min-h-screen container mx-auto lg:py-7 lg:px-14 py-5 px-3">
+                <User />
+                <Business />
+                <div className="flex items-center justify-between sm:flex-row flex-col gap-4">
+                    <button className="sm:w-28 w-full  text-center font-semibold px-6 py-2 rounded bg-transparent border border-black text-navy hover:bg-black hover:text-white cursor-pointer">
+                        Back
+                    </button>
+                    <button className="sm:w-28 w-full text-center font-semibold px-6 py-2 rounded bg-primary hover:bg-primary/75 cursor-pointer text-white">
+                        Next
+                    </button>
+                </div>
+            </section>
         </>
     );
 }
