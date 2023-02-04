@@ -62,7 +62,7 @@ const Layout = ({ children }) => {
             >
                 <HiMenu className="h-6 w-6" />
             </button>
-            <aside className="h-screen group fixed lg:sticky top-0 z-40 lg:w-[264px] w-72 transition-[left] duration-300 ease-in-out xl:shadow-none xl:left-0 bg-grey -left-72 peer-focus-within:left-0 peer-focus-within:shadow-3xl">
+            <aside className="h-screen group fixed lg:sticky top-0 z-40 lg:w-[264px] w-72 transition-[left] duration-300 ease-in-out xl:shadow-none xl:left-0 bg-grey -left-72 peer-focus:left-0 peer-focus:shadow-3xl peer-focus-within:left-0 peer-focus-within:shadow-3xl">
                 <div className="grid place-content-center h-[83px] border-b border-b-gray-300 ">
                     <Link href="/">
                         <Image src={Logo} alt="Truffles Logo" priority />

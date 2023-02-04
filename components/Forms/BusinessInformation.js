@@ -18,7 +18,7 @@ const Business = () => {
                     </label>
                     <input type="text" className="rounded" />
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
                         <label htmlFor="coi" className="text-sm">
                             Country of Incorporation
