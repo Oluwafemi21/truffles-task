@@ -70,7 +70,7 @@ export default function About() {
                 <aside className="h-screen group fixed lg:sticky top-0 z-40 lg:w-[264px] w-72 transition-[left] duration-300 ease-in-out xl:shadow-none xl:left-0 bg-grey -left-72 peer-focus-within:left-0 peer-focus-within:shadow-3xl">
                     <div className="grid place-content-center h-[83px] border-b border-b-gray-300 bg-white">
                         <Link href="/">
-                            <Image src={Logo} alt="Truffles Logo" />
+                            <Image src={Logo} alt="Truffles Logo" priority />
                         </Link>
                     </div>
                     <Stepper steps={steps} currentStep={currentStep} />
